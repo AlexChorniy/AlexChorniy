@@ -6,6 +6,7 @@ import {Component, Input} from "@angular/core";
             <h2>{{event?.name}}</h2>
             <div>Date: {{event?.date}}</div>
             <div
+                    class="well"
                     [ngClass]="getStartTimeClass()"
                     [ngSwitch]="event?.time">
                 Time: {{event?.time}}
