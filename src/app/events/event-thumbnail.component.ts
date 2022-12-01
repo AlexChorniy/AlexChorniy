@@ -6,7 +6,8 @@ import {Component, Input} from "@angular/core";
             <h2>{{event?.name}}</h2>
             <div>Date: {{event?.date}}</div>
             <div
-                    [class.green]="event?.time === '8:00 am'" [ngSwitch]="event?.time">
+                    [ngClass]="{green: event?.time === '8:00 am', bold: event?.time === '8.00 am'}"
+                    [ngSwitch]="event?.time">
                 Time: {{event?.time}}
                 <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
                 <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
