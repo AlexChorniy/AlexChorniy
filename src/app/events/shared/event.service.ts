@@ -5,6 +5,10 @@ export class EventService {
     getEvents() {
         return EVENTS;
     }
+
+    getEvent(id: number) {
+        return EVENTS.find((event) => event.id === id)
+    }
 }
 
 const EVENTS = [
@@ -14,7 +18,7 @@ const EVENTS = [
         date: '9/26/2036',
         time: '10:00 am',
         price: 599.99,
-        imageUrl: '/assets/images/angularconnect-shield.png',
+        imageUrl: 'assets/images/angularconnect_shield.png',
         location: {
             address: '1057 DT',
             city: 'London',
@@ -94,11 +98,11 @@ const EVENTS = [
         price: 950.00,
         imageUrl: '/assets/images/ng-nl.png',
         onlineUrl: 'http://ng-nl.org/',
-        // location: {
-        //     address: 'The NG-NL Convention Center & Scuba Shop',
-        //     city: 'Amsterdam',
-        //     country: 'Netherlands'
-        // },
+        location: {
+            address: 'The NG-NL Convention Center & Scuba Shop',
+            city: 'Amsterdam',
+            country: 'Netherlands'
+        },
         sessions: [
             {
                 id: 1,

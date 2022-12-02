@@ -7,16 +7,22 @@ import {EventThumbnailComponent} from "./events/event-thumbnail.component";
 import {NavbarComponent} from "./nav/navbar.component";
 import {EventService} from "./events/shared/event.service";
 import {ToastrService} from "./common/toastr.service";
+import {EventDetailsComponent} from "./events/event-details/event-details.component";
+import {RouterModule, RouterOutlet} from "@angular/router";
+import {appRoutes} from "./routes";
 
 @NgModule({
     imports: [
         BrowserModule,
+        RouterOutlet,
+        RouterModule.forRoot(appRoutes),
     ],
     declarations: [
         EventsAppComponent,
         EventsListComponent,
         EventThumbnailComponent,
         NavbarComponent,
+        EventDetailsComponent
     ],
     providers: [EventService, ToastrService],
     bootstrap: [EventsAppComponent]
