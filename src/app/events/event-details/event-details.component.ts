@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {EventService} from "../shared/event.service";
+import {EventService, IEvent} from "../shared";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -17,7 +17,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 
 export class EventDetailsComponent {
-    event: any
+    event: IEvent | undefined
 
     constructor(private eventService: EventService, private route: ActivatedRoute) {
     }
