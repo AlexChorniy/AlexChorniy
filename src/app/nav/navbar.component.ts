@@ -17,6 +17,10 @@ import {Component} from "@angular/core";
           display: none
         }
       }
+
+      li > a.active {
+        color: #f97924;
+      }
     `]
 })
 export class NavbarComponent {
