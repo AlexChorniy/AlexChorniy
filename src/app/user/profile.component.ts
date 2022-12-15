@@ -9,14 +9,14 @@ import {Router} from "@angular/router";
       em {
         float: right;
         color: #e05c65;
-        padding-left: 10px;
+        padding-right: 5px;
       }
 
       .error input {
         background-color: #E3C3C5;
       }
 
-      •error ::-webkit-input-placeholder {
+      .error ::-webkit-input-placeholder {
         color: #999;
       }
 
@@ -24,11 +24,11 @@ import {Router} from "@angular/router";
         color: #999;
       }
 
-      •error :-moz-placeholder {
+      .error :-moz-placeholder {
         color: #999;
       }
 
-      •error :-ms-input-placeholder {
+      .error :-ms-input-placeholder {
         color: #999;
       }
 
@@ -62,5 +62,13 @@ export class ProfileComponent implements OnInit {
             this.authService.updateCurrentUser(formValues.firstName, formValues.lastName)
             this.router.navigate(['events'])
         }
+    }
+
+    validateLastName() {
+        return this.profileForm.controls['lastName'].invalid && this.profileForm.controls['lastName'].touched
+    }
+
+    validateFirstName() {
+        return this.profileForm.controls['firstName'].invalid && this.profileForm.controls['firstName'].touched
     }
 }
