@@ -1,27 +1,74 @@
 import {Component} from "@angular/core";
 import {Router} from "@angular/router";
+import {EventService} from "./shared";
 
 @Component({
-    template: `
-        <h1>New Event</h1>
-        <hr>
-        <div>
-            <h3>[Create Form here]</h3>
-            <br>
-            <br>
-            <button type="submit" class="btn btn-primary">Save</button>
-            <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
-        </div>
-    `,
+    templateUrl: 'create-event.component.html',
+    styles: [`
+      em {
+        float: right;
+        color: #e05c65;
+        padding-right: 5px;
+      }
+
+      .error input {
+        background-color: #E3C3C5;
+      }
+
+      .error ::-webkit-input-placeholder {
+        color: #999;
+      }
+
+      error ::-moz-placeholder {
+        color: #999;
+      }
+
+      .error :-moz-placeholder {
+        color: #999;
+      }
+
+      .error :-ms-input-placeholder {
+        color: #999;
+      }
+
+    `],
 })
 
 export class CreateEventComponent {
+    event: {
+        name: string
+        date: Date
+        time: string
+        price: number
+        address: string
+        city: string
+        country: string
+        onlineUrl: string
+        imageUrl: string
+    };
     isDirty: boolean = true;
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private eventService: EventService) {
+        this.event = {
+            name: 'Name',
+            date: new Date(),
+            time: '28/12/22',
+            price: 999,
+            address: 'some address',
+            city: 'Nice place',
+            country: 'Strong',
+            onlineUrl: 'http://ngspectacular.com',
+            imageUrl: 'http://ngspectacular.com/logo.png',
+        }
     }
 
     cancel() {
+        this.router.navigate(['/events'])
+    }
+
+    saveEvent(formValues: any) {
+        this.eventService.saveEvent(formValues)
+        this.isDirty = false
         this.router.navigate(['/events'])
     }
 }
