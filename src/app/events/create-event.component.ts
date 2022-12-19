@@ -35,28 +35,22 @@ import {EventService} from "./shared";
 })
 
 export class CreateEventComponent {
-    event: {
-        name: string
-        date: Date
-        time: string
-        price: number
-        address: string
-        city: string
-        country: string
-        onlineUrl: string
-        imageUrl: string
-    };
+    event: any;
     isDirty: boolean = true;
 
     constructor(private router: Router, private eventService: EventService) {
         this.event = {
+            id: 7,
             name: 'Name',
             date: new Date(),
             time: '28/12/22',
             price: 999,
-            address: 'some address',
-            city: 'Nice place',
-            country: 'Strong',
+            location: {
+                address: 'some address',
+                city: 'Nice place',
+                country: 'Strong',
+            },
+            sessions: [],
             onlineUrl: 'http://ngspectacular.com',
             imageUrl: 'http://ngspectacular.com/logo.png',
         }

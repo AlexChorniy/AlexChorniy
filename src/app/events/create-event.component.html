@@ -38,17 +38,18 @@
         <div ngModelGroup="location">
             <div class="form-group">
                 <label for="address">Event Location:</label>
-                <input [(ngModel)]="event.address" class="form-control" id="address" name="address"
+                <input [(ngModel)]="event.location.address" class="form-control" id="address" name="address"
                        placeholder="Address of event..."
                        type="text"/>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <input [(ngModel)]="event.city" class="form-control" id="city" name="city" placeholder="City..."
+                    <input [(ngModel)]="event.location.city" class="form-control" id="city" name="city"
+                           placeholder="City..."
                            type="text"/>
                 </div>
                 <div class="col-md-6">
-                    <input [(ngModel)]="event.country" class="form-control" id="country" name="country"
+                    <input [(ngModel)]="event.location.country" class="form-control" id="country" name="country"
                            placeholder="Country..."
                            type="text"/>
                 </div>
