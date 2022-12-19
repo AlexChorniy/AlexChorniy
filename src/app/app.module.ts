@@ -3,6 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {EventsAppComponent} from './events-app.component';
 import {
     CreateEventComponent,
+    CreateSessionComponent,
     EventDetailsComponent,
     EventRouteActivatorService,
     EventService,
@@ -34,6 +35,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
         EventDetailsComponent,
         CreateEventComponent,
         Error404Component,
+        CreateSessionComponent,
     ],
     providers: [
         EventService,
