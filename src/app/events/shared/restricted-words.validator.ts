@@ -1,7 +1,7 @@
-import {FormControl} from "@angular/forms";
+import {AbstractControl} from "@angular/forms";
 
 export const restrictedWords = (words: string[]) =>
-    (control: FormControl): Record<string, any> | null => {
+    (control: AbstractControl): Record<string, any> | null => {
         if (!words) return null;
 
         const invalidWords = words
