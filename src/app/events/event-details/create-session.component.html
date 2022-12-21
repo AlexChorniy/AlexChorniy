@@ -47,6 +47,6 @@
                       rows=3></textarea>
         </div>
         <button [disabled]="newSessionForm.invalid" class="btn btn-primary" type="submit">Save</button>
-        <button class="btn btn-default" type="button">Cancel</button>
+        <button (click)="cancel()" class="btn btn-default" type="button">Cancel</button>
     </form>
 </div>
