@@ -10,10 +10,10 @@ import {AuthService} from "../user/auth.service";
       }
 
       #searchForm {
-        margin-left: 100px
+        margin-left: 5px
       }
 
-      @media (max-width: 1200px) {
+      @media (max-width: 950px) {
         #searchForm {
           display: none
         }
@@ -26,6 +26,6 @@ import {AuthService} from "../user/auth.service";
 })
 export class NavbarComponent {
     constructor(public auth: AuthService) {
-        
+
     }
 }
