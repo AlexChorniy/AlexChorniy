@@ -19,10 +19,12 @@ import {appRoutes} from "./routes";
 import {Error404Component} from "./errors/404.component";
 import {AuthService} from "./user/auth.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {CollapsibleWellComponents} from "./common/collapsible-well.components";
-import {Toastr, TOASTR_TOKEN} from "./common/toastr.service";
+import {CollapsibleWellComponents, Toastr, TOASTR_TOKEN} from "./common";
 
-declare let toastr: Toastr
+let toastr: Toastr = window['toastr'];
+let jQuery = window['$'];
+
+console.log(window);
 
 @NgModule({
     imports: [
