@@ -12,6 +12,8 @@ import {
     EventsListResolverService,
     EventThumbnailComponent,
     SessionListComponent,
+    UpvoteComponent,
+    VoterService,
 } from './events';
 import {NavbarComponent} from "./nav/navbar.component";
 import {RouterModule, RouterOutlet} from "@angular/router";
@@ -52,6 +54,7 @@ let jQuery = window['$'];
         CollapsibleWellComponents,
         DurationPipe,
         SimpleModalComponent,
+        UpvoteComponent,
         ModalTriggerDirective,
     ],
     providers: [
@@ -66,6 +69,7 @@ let jQuery = window['$'];
         },
         EventRouteActivatorService,
         EventsListResolverService,
+        VoterService,
         AuthService,
         {provide: 'canDeactivateCreateEvent', useValue: checkDirtyState},
     ],
