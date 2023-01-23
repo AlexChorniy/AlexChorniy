@@ -38,9 +38,9 @@ export class CreateEventComponent {
     event: {
         id: number;
         name: string;
-        date: Date;
+        date: Date | null;
         time: string;
-        price: number;
+        price: number | null;
         location: {
             address: string,
             city: string,
@@ -55,18 +55,18 @@ export class CreateEventComponent {
     constructor(private router: Router, private eventService: EventService) {
         this.event = {
             id: 7,
-            name: 'Name',
-            date: new Date(),
-            time: '28/12/22',
-            price: 999,
+            name: '',
+            date: null, // new Date()
+            time: '', // '28/12/22'
+            price: null,
             location: {
-                address: 'some address',
-                city: 'Nice place',
-                country: 'Strong',
+                address: '',
+                city: '',
+                country: '',
             },
             sessions: [],
-            onlineUrl: 'http://ngspectacular.com',
-            imageUrl: 'http://ngspectacular.com/logo.png',
+            onlineUrl: '', // http://ngspectacular.com
+            imageUrl: '', // http://ngspectacular.com/logo.png
         }
     }
 
