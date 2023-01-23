@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {Router} from "@angular/router";
-import {EventService} from "./shared";
+import {EventService, ISession} from "./shared";
 
 @Component({
     templateUrl: 'create-event.component.html',
@@ -35,7 +35,21 @@ import {EventService} from "./shared";
 })
 
 export class CreateEventComponent {
-    event: any;
+    event: {
+        id: number;
+        name: string;
+        date: Date;
+        time: string;
+        price: number;
+        location: {
+            address: string,
+            city: string,
+            country: string,
+        };
+        sessions: ISession[];
+        onlineUrl: string;
+        imageUrl: string;
+    };
     isDirty: boolean = true;
 
     constructor(private router: Router, private eventService: EventService) {

@@ -22,6 +22,7 @@ export class UpvoteComponent {
     iconColor: string = 'white';
 
     @Input() set voted(val: boolean) {
+        console.log(this.iconColor);
         this.iconColor = val ? 'red' : 'white';
     };
 
